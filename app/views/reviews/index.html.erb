@@ -1,0 +1,15 @@
+<h1>reviews index</h1>
+
+<% @review.each do |review| %>
+
+<ul>
+    <li><%= link_to "#{review.title}", review_path(review) %></li>
+</ul>
+
+<%end%>
+
+<%= link_to "create review", new_review_path %>
+<br>
+<%= link_to 'all food trucks', food_trucks_path %>
+<br>
+

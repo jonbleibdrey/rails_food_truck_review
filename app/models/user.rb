@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :food_trucks
+  has_many :reviews, through: :food_trucks 
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

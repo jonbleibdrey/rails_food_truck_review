@@ -6,5 +6,10 @@ class ApplicationController < ActionController::Base
         request.env['omniauth.origin'] || root_path
     end
 
+    # def logout
+    #     current_user.clear
+    #     redirect new_user_session_path
+    # end
+
 
 end

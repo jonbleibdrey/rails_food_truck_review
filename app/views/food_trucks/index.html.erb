@@ -1,5 +1,14 @@
-<h1>horray</h1>
+<h1>foodtruck index page</h1>
 
-<h1>hello again</h1>
+<% @foodtruck.each do |truck|%>
+<ul>
+    <li><%= link_to "#{truck.name}", food_truck_path(truck) %></li>
+</ul>
 
+<%end%>
+
+<%= link_to "create food truck", new_food_truck_path %>
+<br>
+<%= link_to 'all reviews', reviews_path %>
+<br>
 <%= link_to 'logout', destroy_user_session_path, method: :delete %>

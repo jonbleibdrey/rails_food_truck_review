@@ -1,0 +1,15 @@
+<h1>Show page for reviews</h1>
+<ul>
+
+<li>title: <%= @review.title %></li>
+<li>detail: <%= @review.detail%></li>
+<li>rating: <%= @review.rating%></li>
+<li>recommend: <%= @review.recommend%></li>
+
+<%=link_to "edit review", edit_review_path(@review)%>
+<br>
+<%=link_to "delete review", review_path(@review), :method => "delete"%>
+<br>
+<%=link_to "all reviews", reviews_path%>
+
+</ul>

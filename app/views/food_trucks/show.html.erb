@@ -1,0 +1,12 @@
+<h1>Show page for food truck</h1>
+<ul>
+
+<li>name: <%= @foodtruck.name %></li>
+<li>category of food: <%= @foodtruck.category%></li>
+<li>phone number: <%= @foodtruck.phone%></li>
+
+<%=link_to "edit foodtruck", edit_food_truck_path(@foodtruck)%>
+<br>
+<%=link_to "delete foodtruck", food_truck_path(@foodtruck), :method => "delete"%>
+
+</ul>

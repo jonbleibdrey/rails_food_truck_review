@@ -1,0 +1,17 @@
+<%= form_for @review do |f| %>
+<br>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<br>
+<%= f.label :detail %>
+<%= f.text_field :detail %>
+<br>
+<%= f.label :rating %>
+<%= f.text_field :rating %>
+<br>
+<%= f.label :recommend %>
+<%= f.text_field :recommend %>
+<br>
+
+<%= f.submit %>
+<% end %>
