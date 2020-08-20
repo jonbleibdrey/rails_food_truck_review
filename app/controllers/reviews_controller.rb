@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
 
     def index
         @review = Review.all
+        
     end
     
     def show
@@ -15,7 +16,7 @@ class ReviewsController < ApplicationController
     def create
         @review = Review.new(review_params)
         if @review.save
-        redirect_to reviews_path
+        redirect_to food_trucks_path
         else
         render :new
         end

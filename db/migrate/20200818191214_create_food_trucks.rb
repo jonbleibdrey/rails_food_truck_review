@@ -5,7 +5,7 @@ class CreateFoodTrucks < ActiveRecord::Migration[6.0]
       t.string :category
       t.integer :phone
       t.integer :user_id
-      t.integer :review_id
+      t.string :current_location
       t.timestamps
     end
   end

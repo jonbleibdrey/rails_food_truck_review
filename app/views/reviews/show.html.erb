@@ -6,9 +6,11 @@
 <li>rating: <%= @review.rating%></li>
 <li>recommend: <%= @review.recommend%></li>
 
+<%if current_user.id == @review.user_id%>
 <%=link_to "edit review", edit_review_path(@review)%>
 <br>
 <%=link_to "delete review", review_path(@review), :method => "delete"%>
+<%end%>
 <br>
 <%=link_to "all reviews", reviews_path%>
 

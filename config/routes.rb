@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
-  root 'food_trucks#index'
   
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
-
-  # get '/users/sign_out', to: 'application#logout'
+  
+  root 'food_trucks#index'
   resources :reviews
+  resources :food_trucks
+  
   resources :food_trucks do
     resources :reviews
   end
-
+  
+  # get '/users/sign_out', to: 'application#logout'
   
  
 

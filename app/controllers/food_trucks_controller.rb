@@ -1,8 +1,10 @@
 class FoodTrucksController < ApplicationController
+    helper_method :has_permission
 
     def index
         @foodtruck = FoodTruck.all
     end
+
 
     def show
         find_food_truck
@@ -48,9 +50,14 @@ class FoodTrucksController < ApplicationController
     end
     
     def food_truck_params
-        params.require(:food_truck).permit(:name, :category, :phone)
+        params.require(:food_truck).permit(:name, :category, :phone, :current_location, :user_id)
     end
 
+    def has_permission
+        if find_food_truck
+            @foodtruck.owner == current_user
+        end
+    end
 
 
 end
