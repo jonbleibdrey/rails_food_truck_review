@@ -15,9 +15,11 @@ class ReviewsController < ApplicationController
     
     def create
         @review = Review.new(review_params)
-        if @review.save
+        if @review.valid? 
+        @review.save
         redirect_to food_trucks_path
         else
+        flash.now[:errors] = " can not be blank"
         render :new
         end
     end
@@ -28,7 +30,8 @@ class ReviewsController < ApplicationController
     
     def update
         find_review
-        if @review.update(review_params)
+        @review.update(review_params)
+        if @review.valid?
         redirect_to review_path(@review)
         else
         render :edit

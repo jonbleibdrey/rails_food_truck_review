@@ -2,16 +2,19 @@
 <br>
 <%= f.label :title %>
 <%= f.text_field :title %>
+<%= flash[:errors] if flash[:errors]%>
 <br>
 <%= f.label :detail %>
 <%= f.text_field :detail %>
+<%= flash[:errors] if flash[:errors]%>
 <br>
-<%= f.label :rating %>
+<%= f.label :rating,'rating 1-5:' %>
 <%= f.text_field :rating %>
 <br>
-<%= f.label :recommend %>
+<%= f.label :recommend,'recommend(true or false):' %>
 <%= f.text_field :recommend %>
 <br>
 
 <%= f.submit %>
 <% end %>
+
