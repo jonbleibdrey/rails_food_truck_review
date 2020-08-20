@@ -12,6 +12,7 @@
 <%= f.label :current_location %>
 <%= f.text_field :current_location %>
 <br>
-
+<%= flash[:errors] if flash[:errors] %>
+<br>
 <%= f.submit %>
 <% end %>

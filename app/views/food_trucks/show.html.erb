@@ -18,6 +18,8 @@
 
  <%@foodtruck.reviews.each do |review|%>
  <br>
+ <li>id:<%=review.id %></li>
+ <br>
  <li>title of review: <%=review.title%></li>
  <br>
  <li>detail's: <%=review.detail%></li>
@@ -27,7 +29,11 @@
  <li>would you recommend: <%=review.recommend%></li>
  <br>
  <%end%>
+ <%if has_permission %> 
+
+<br>
 <%=link_to "leave review",   new_food_truck_review_path(@foodtruck)%>
+<% end %>
 </ul>
 <br>
 <br>

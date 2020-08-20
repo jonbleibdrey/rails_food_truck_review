@@ -19,6 +19,7 @@ class FoodTrucksController < ApplicationController
         if @foodtruck.save
         redirect_to food_trucks_path
         else
+        flash.now[:errors] = "please make sure each field is filled out correctly"
         render :new
         end
     end
@@ -32,6 +33,7 @@ class FoodTrucksController < ApplicationController
         if @foodtruck.update(food_truck_params)
         redirect_to food_truck_path(@foodtruck)
         else
+        flash.now[:errors] = "please make sure each field is filled out correctly"
         render :edit
         end
     end

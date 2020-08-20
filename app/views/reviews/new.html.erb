@@ -1,20 +1,20 @@
 <%= form_for @review do |f| %>
+<%= f.hidden_field :food_truck_id, value: @foodtruck.id%>
 <br>
 <%= f.label :title %>
 <%= f.text_field :title %>
-<%= flash[:errors] if flash[:errors]%>
 <br>
 <%= f.label :detail %>
 <%= f.text_field :detail %>
-<%= flash[:errors] if flash[:errors]%>
 <br>
-<%= f.label :rating,'rating 1-5:' %>
+<%= f.label :rating %>
 <%= f.text_field :rating %>
 <br>
-<%= f.label :recommend,'recommend(true or false):' %>
+<%= f.label :recommend %>
 <%= f.text_field :recommend %>
 <br>
-
+<%= flash[:errors] if flash[:errors] %>
+<br>
 <%= f.submit %>
 <% end %>
 

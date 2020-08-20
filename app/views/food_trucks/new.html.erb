@@ -13,6 +13,9 @@
 <%= f.text_field :current_location %>
 <br>
 <%= f.hidden_field :user_id, :value => current_user.id %>
+<br>
+<%= flash[:errors] if flash[:errors] %>
+<br>
 
 <%= f.submit %>
 <% end %>

@@ -11,15 +11,15 @@ class ReviewsController < ApplicationController
     
     def new
         @review = Review.new
+        @foodtruck = FoodTruck.find_by_id(params[:food_truck_id])
     end
     
     def create
-        @review = Review.new(review_params)
-        if @review.valid? 
-        @review.save
+        @review = current_user.reviews.build(review_params) 
+        if @review.save
         redirect_to food_trucks_path
         else
-        flash.now[:errors] = " can not be blank"
+        flash.now[:errors] = "please make sure each field is filled out correctly"
         render :new
         end
     end
@@ -30,10 +30,10 @@ class ReviewsController < ApplicationController
     
     def update
         find_review
-        @review.update(review_params)
-        if @review.valid?
+        if @review.update(review_params) 
         redirect_to review_path(@review)
         else
+        flash.now[:errors] = "please make sure each field is filled out correctly"
         render :edit
         end
     end
@@ -52,7 +52,11 @@ class ReviewsController < ApplicationController
     end
         
     def review_params
-        params.require(:review).permit(:title, :detail, :rating, :recommend)
+        params.require(:review).permit(:title, :detail, :rating, :recommend, :food_truck_id)
     end
+
+    # def find_food_truck
+    # @foodtruck = FoodTruck.find(params[:id])
+    # end
     
 end

@@ -12,6 +12,7 @@
 <%= f.label :recommend %>
 <%= f.text_field :recommend %>
 <br>
-
+<%= flash[:errors] if flash[:errors] %>
+<br>
 <%= f.submit %>
 <% end %>
