@@ -1,12 +1,32 @@
-<h1>reviews index</h1>
-    <br>
+<div class="container">
+<div class="container">
+<h1>All Reviews</h1>
+</div>
+
+<div class="container">
+<%= link_to 'return to all food trucks', food_trucks_path %>
+</div>
+
+<div class="container">
     <% @review.each do |review| %>
         <ul>
-            <li>food truck name: <%= link_to review.food_truck.name, food_truck_path(review.food_truck) %></li>
-            <br>
-            <li><%= link_to review.title, review_path(review) %></li>
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card  green accent-2">
+        <div class="card-content white-text">
+          <span class="card-title">Food Truck: <%= link_to review.food_truck.name, food_truck_path(review.food_truck) %></span>
+            <p>Review: <%= link_to review.title, review_path(review) %></p>
         </ul>
     <%end%>
-        <%= link_to 'return to all food trucks', food_trucks_path %>
-<br>
+    </div>
+     <div class="card-action">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
+          
+       

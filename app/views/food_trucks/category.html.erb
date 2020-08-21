@@ -1,4 +1,7 @@
+<div class="container">
+
 <h1>Category page:</h1>
+
 <%@category.each do |truck|%>
 <ul>
     <li><%=truck.name%></li>
@@ -8,4 +11,7 @@
 </ul>
 <%end%>
 
+
 <%= link_to "back to all food trucks", food_trucks_path%>
+</div>
+<br>

@@ -1,5 +1,5 @@
+<div class="container">
 <%= render partial: "food_trucks/error", object: @foodtruck %>
-
 <%= form_for @foodtruck do |f| %>
 <br>
 <%= f.label :name %>
@@ -18,3 +18,5 @@
 <br>
 <%= f.submit %>
 <% end %>
+        <%= link_to 'back to all reviews', reviews_path %>
+</div>

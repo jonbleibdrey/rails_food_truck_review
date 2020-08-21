@@ -1,12 +1,39 @@
-<h1>foodtruck index page</h1>
+<div class="container">
+<h1> All the Food-Trucks</h1>
+</div>
+<div class="container">
+    <%if user_signed_in?%>
+        <%= link_to "create food truck", new_food_truck_path %>
+    <br>
+        <%= link_to 'jump to all reviews', reviews_path %>
+    <br>
+        <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+    <% else %>
+        <%= link_to 'login', new_user_session_path %>
+    <%end%>
+</div>
     <br>
         <% @foodtruck.each do |truck|%>
+        <div class="container">
             <ul>
-                <li><%= link_to "#{truck.name}", food_truck_path(truck) %></li>
+             <div class="row">
+    <div class="col s12 m6">
+      <div class="card  green accent-2">
+        <div class="card-content white-text">
+          <span class="card-title">Food Truck Name: <%= link_to "#{truck.name}", food_truck_path(truck) %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
             </ul>
         <%end%>
-    <br>
+        <div class="container">
 <h1>Top categories:</h1>
+        </div>
+
+        <div class="container">
+        <div class="container">
     <li>
         <%= link_to "mexican", foodtrucks_mexican_path %>
     </li>
@@ -18,15 +45,14 @@
     <li>
         <%= link_to "american", foodtrucks_american_path %>
      </li>
-     <br>
+        </div>
+        </div>
+    <br>
 
 
-    <%if user_signed_in?%>
-        <%= link_to "create food truck", new_food_truck_path %>
-    <br>
-        <%= link_to 'jump to all reviews', reviews_path %>
-    <br>
-        <%= link_to 'logout', destroy_user_session_path, method: :delete %>
-    <% else %>
-        <%= link_to 'login', new_user_session_path %>
-    <%end%>
+
+
+
+   
+         
+            
