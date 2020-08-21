@@ -1,21 +1,32 @@
 <h1>foodtruck index page</h1>
-<br>
+    <br>
+        <% @foodtruck.each do |truck|%>
+            <ul>
+                <li><%= link_to "#{truck.name}", food_truck_path(truck) %></li>
+            </ul>
+        <%end%>
+    <br>
+<h1>Top categories:</h1>
+    <li>
+        <%= link_to "mexican", foodtrucks_mexican_path %>
+    </li>
 
-<% @foodtruck.each do |truck|%>
-<ul>
-    <li><%= link_to "#{truck.name}", food_truck_path(truck) %></li>
-</ul>
+    <li> 
+        <%= link_to "italian", foodtrucks_italian_path %>
+     </li>
 
-<%end%>
-<br>
+    <li>
+        <%= link_to "american", foodtrucks_american_path %>
+     </li>
+     <br>
 
-<%if user_signed_in?%>
-<%= link_to "create food truck", new_food_truck_path %>
-<br>
-<%= link_to 'jump to all reviews', reviews_path %>
-<br>
-<%= link_to 'logout', destroy_user_session_path, method: :delete %>
-<% else %>
-<%= link_to 'login', new_user_session_path %>
 
-<%end%>
+    <%if user_signed_in?%>
+        <%= link_to "create food truck", new_food_truck_path %>
+    <br>
+        <%= link_to 'jump to all reviews', reviews_path %>
+    <br>
+        <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+    <% else %>
+        <%= link_to 'login', new_user_session_path %>
+    <%end%>

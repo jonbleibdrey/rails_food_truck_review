@@ -5,15 +5,14 @@ class FoodTrucksController < ApplicationController
         @foodtruck = FoodTruck.all
     end
 
-
     def show
         find_food_truck
     end
-
+    
     def new
         @foodtruck = FoodTruck.new
     end
-
+    
     def create
         @foodtruck = FoodTruck.new(food_truck_params)
         if @foodtruck.save
@@ -23,11 +22,11 @@ class FoodTrucksController < ApplicationController
         render :new
         end
     end
-
+    
     def edit
         find_food_truck
     end
-
+    
     def update
         find_food_truck
         if @foodtruck.update(food_truck_params)
@@ -37,13 +36,29 @@ class FoodTrucksController < ApplicationController
         render :edit
         end
     end
-
+    
     def destroy
         if find_food_truck
-            @foodtruck.destroy
-            redirect_to food_trucks_path
+        @foodtruck.destroy
+        redirect_to food_trucks_path
         end
     end
+    
+    def mexican
+        @category = FoodTruck.mexican
+        render :category
+    end
+
+    def italian
+        @category = FoodTruck.italian
+        render :category
+    end
+    
+    def american
+        @category = FoodTruck.american
+        render :category
+    end
+
 
     private
 

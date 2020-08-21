@@ -1,0 +1,11 @@
+<h1>Category page:</h1>
+<%@category.each do |truck|%>
+<ul>
+    <li><%=truck.name%></li>
+    <li><%=truck.category%></li>
+    <li><%=truck.phone%></li>
+    <li><%=truck.current_location%></li>
+</ul>
+<%end%>
+
+<%= link_to "back to all food trucks", food_trucks_path%>

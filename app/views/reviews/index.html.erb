@@ -1,17 +1,12 @@
 <h1>reviews index</h1>
-<br>
-<%= link_to 'all food trucks', food_trucks_path %>
-<br>
-
-<% @review.each do |review| %>
-
-<ul>
-    <li>food truck name: <%= link_to review.food_truck.name, food_truck_path(review.food_truck) %></li>
-    <li><%= link_to review.title, review_path(review) %></li>
-</ul>
-
-<%end%>
-
-
+    <br>
+    <% @review.each do |review| %>
+        <ul>
+            <li>food truck name: <%= link_to review.food_truck.name, food_truck_path(review.food_truck) %></li>
+            <br>
+            <li><%= link_to review.title, review_path(review) %></li>
+        </ul>
+    <%end%>
+        <%= link_to 'return to all food trucks', food_trucks_path %>
 <br>
 

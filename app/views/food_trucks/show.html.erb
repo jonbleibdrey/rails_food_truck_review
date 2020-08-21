@@ -1,42 +1,40 @@
 <h1>Show page for food truck</h1>
-<ul>
+    <ul>
+        <li>name: <%= @foodtruck.name %></li>
+    <br>
+        <li>category of food: <%= @foodtruck.category%></li>
+    <br>
+        <li>phone number: <%= @foodtruck.phone%></li>
+    <br>
+        <li>current location: <%= @foodtruck.current_location%></li>
+    <br>
+    <%if has_permission %> 
+        <%=link_to "edit foodtruck", edit_food_truck_path(@foodtruck)%>
+    <br>
+        <%=link_to "delete foodtruck", food_truck_path(@foodtruck), :method => "delete"%>
+    <% end %>
 
-<li>name: <%= @foodtruck.name %></li>
-<br>
-<li>category of food: <%= @foodtruck.category%></li>
-<br>
-<li>phone number: <%= @foodtruck.phone%></li>
-<br>
-<li>current location: <%= @foodtruck.current_location%></li>
-<br>
-<%if has_permission %> 
-<%=link_to "edit foodtruck", edit_food_truck_path(@foodtruck)%>
-<br>
-<%=link_to "delete foodtruck", food_truck_path(@foodtruck), :method => "delete"%>
-<% end %>
 <h1>reviews</h1>
 
- <%@foodtruck.reviews.each do |review|%>
- <br>
- <li>id:<%=review.id %></li>
- <br>
- <li>title of review: <%=review.title%></li>
- <br>
- <li>detail's: <%=review.detail%></li>
- <br>
- <li>rating: <%=review.rating%></li>
- <br>
- <li>would you recommend: <%=review.recommend%></li>
- <br>
- <%end%>
- <%if has_permission %> 
-
-<br>
-<%=link_to "leave review",   new_food_truck_review_path(@foodtruck)%>
-<% end %>
-</ul>
-<br>
-<br>
-
-<%=link_to " go back to all food trucks", food_trucks_path %>
-<br>
+    <%@foodtruck.reviews.each do |review|%>
+    <br>
+        <li>id:<%=review.id %></li>
+    <br>
+        <li>title of review: <%=review.title%></li>
+    <br>
+        <li>detail's: <%=review.detail%></li>
+    <br>
+        <li>rating: <%=review.rating%></li>
+    <br>
+        <li>would you recommend: <%=review.recommend%></li>
+    <br>
+        <%if has_permission %> 
+            <%=link_to "edit review",   edit_review_path(review)%>
+            <br>
+            <%=link_to "leave review",   new_food_truck_review_path(@foodtruck)%>
+        <% end %>
+    <%end%>
+    </ul>
+    <br>
+        <br>
+            <%=link_to " go back to all food trucks", food_trucks_path %>
