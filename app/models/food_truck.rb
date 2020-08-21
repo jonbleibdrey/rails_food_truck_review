@@ -3,9 +3,12 @@ class FoodTruck < ApplicationRecord
     has_many :users, through: :reviews
     belongs_to :owner, class_name: "User", foreign_key: :user_id
 
-    validates :name, presence: true
+    validates :name, presence: true 
+    # validates :name, uniqueness: true
     validates :category, presence: true
-    validates :phone, length: { is: 10 }
+    validates :phone, length: { is: 10 } 
+    # validates :phone, uniqueness: true
+    # validates :phone, allow_blank: true
     validates :current_location, presence: true
     
    

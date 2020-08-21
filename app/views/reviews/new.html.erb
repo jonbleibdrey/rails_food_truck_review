@@ -1,3 +1,5 @@
+<%= render partial: "reviews/error", object: @review %>
+
 <%= form_for @review do |f| %>
 <%= f.hidden_field :food_truck_id, value: @foodtruck.id%>
 <br>
@@ -12,8 +14,6 @@
 <br>
 <%= f.label :recommend %>
 <%= f.text_field :recommend %>
-<br>
-<%= flash[:errors] if flash[:errors] %>
 <br>
 <%= f.submit %>
 <% end %>

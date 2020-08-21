@@ -16,9 +16,8 @@ class ReviewsController < ApplicationController
     def create
         @review = current_user.reviews.build(review_params) 
         if @review.save
-        redirect_to food_trucks_path
+        redirect_to review_path(@review)
         else
-        flash.now[:errors] = "please make sure each field is filled out correctly"
         render :new
         end
     end
@@ -32,7 +31,6 @@ class ReviewsController < ApplicationController
         if @review.update(review_params) 
         redirect_to review_path(@review)
         else
-        flash.now[:errors] = "please make sure each field is filled out correctly"
         render :edit
         end
     end

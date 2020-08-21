@@ -1,3 +1,5 @@
+<%= render partial: "reviews/error", object: @review %>
+
 <%= form_for @review do |f| %>
 <br>
 <%= f.label :title %>
@@ -11,8 +13,6 @@
 <br>
 <%= f.label :recommend %>
 <%= f.text_field :recommend %>
-<br>
-<%= flash[:errors] if flash[:errors] %>
 <br>
 <%= f.submit %>
 <% end %>
