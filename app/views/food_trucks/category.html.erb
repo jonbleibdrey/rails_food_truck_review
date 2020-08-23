@@ -1,13 +1,13 @@
-<div class="container">
+<div class="center-align">
 
 <h1>Category page:</h1>
 
 <%@category.each do |truck|%>
 <ul>
-    <li><%=truck.name%></li>
-    <li><%=truck.category%></li>
-    <li><%=truck.phone%></li>
-    <li><%=truck.current_location%></li>
+    <li> name: <%=truck.name%></li>
+    <li> category: <%=truck.category%></li>
+    <li> phone number:<%=truck.phone%></li>
+    <li>current location: <%=truck.current_location%></li>
 </ul>
 <%end%>
 

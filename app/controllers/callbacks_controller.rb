@@ -5,6 +5,4 @@ class CallbacksController < ApplicationController
         sign_in_and_redirect @user
     end
 
-
-
 end

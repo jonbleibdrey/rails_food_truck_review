@@ -52,8 +52,8 @@ class ReviewsController < ApplicationController
         params.require(:review).permit(:title, :detail, :rating, :recommend, :food_truck_id)
     end
 
-    # def find_food_truck
-    # @foodtruck = FoodTruck.find(params[:id])
-    # end
+    def find_food_truck
+    @foodtruck = FoodTruck.find(params[:id])
+    end
     
 end

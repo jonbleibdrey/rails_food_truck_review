@@ -14,17 +14,19 @@
   <body>
   <!---------nav bar------>
   <nav>
+  <div class="left-align">
     <div class="nav-wrapper">
     <div class="container">
       <a class="brand-logo"><i class="material-icons" >local_shipping</i>TRUCKY™</a>
       </div>
+      <div  class="left-align">
       <ul class="right hide-on-med-and-down">
         <li><a href="reviews#index"><i class="material-icons">border_color</i>Review</a></li>
         <li><a href="food_trucks#index"><i class="material-icons">directions_bus</i>Food</a></li>
         <li><a href=""><i class="material-icons">eject</i>Logout</a></li>
-     
+     </div>
+     </div>
     <!---------nav bar------>
-    
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
   <% end %>
@@ -35,7 +37,9 @@
     </div>
   </nav>
     <%= yield %>
+  
     <!-------------footer-------->
+     <div  class="left-align">  
      <footer class="page-footer">
           <div class="container">
             <div class="row">
@@ -53,7 +57,9 @@
             © 2020 TRUCKY™  Copyright 
             </div>
           </div>
+
         </footer>
+          </div>
     <!-------------footer-------->
             
   </body>

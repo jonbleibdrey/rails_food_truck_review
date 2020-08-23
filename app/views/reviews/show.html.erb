@@ -1,17 +1,25 @@
 <div class="container">
-<h1>Show page for reviews</h1>
+  <h1>Show page for reviews</h1>
     <ul>
-        <li>title: <%= @review.title %></li>
-        <li>detail: <%= @review.detail%></li>
-        <li>rating: <%= @review.rating%></li>
-        <li>recommend: <%= @review.recommend%></li>
-
+     <div class="row">
+       <div class="col s12 m6">
+        <div class="card white">
+          <div class="card-content black-text">
+            <span class="card-title"></span>
+    <li>title: <%= @review.title %></li>
+    <li>detail: <%= @review.detail%></li>
+    <li>rating: <%= @review.rating%></li>
+    <li>recommend: <%= @review.recommend%></li>
+          </div>
+        </div>
+      </div>
+    </div>
     <%if current_user.id == @review.user_id%>
-        <%=link_to "edit review", edit_review_path(@review)%>
+    <%=link_to "edit review", edit_review_path(@review)%>
     <br>
-        <%=link_to "delete review", review_path(@review), :method => "delete"%>
+    <%=link_to "delete review", review_path(@review), :method => "delete"%>
     <%end%>
     <br>
-        <%=link_to "all reviews", reviews_path%>
+    <%=link_to "all reviews", reviews_path%>
 </ul>
 </div>

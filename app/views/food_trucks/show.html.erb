@@ -1,5 +1,6 @@
 <div class="container">
-<h1>Show page for food truck</h1>
+<div class="container">
+    <h1>Food Truck info:</h1>
     <ul>
         <li>name: <%= @foodtruck.name %></li>
     <br>
@@ -14,17 +15,17 @@
     <br>
         <%=link_to "delete foodtruck", food_truck_path(@foodtruck), :method => "delete"%>
     <% end %>
-    </div>
-   <div class="container"> 
-<h1>reviews</h1>
+        </div>
+        <div class="container"> 
+    <h1>Reviews:</h1>
 
     <%@foodtruck.reviews.each do |review|%>
 
           <div class="row">
-    <div class="col s12 m6">
-      <div class="card  green accent-2">
-        <div class="card-content white-text">
-          <span class="card-title">
+            <div class="col s12 m10">
+                <div class="card  white">
+                    <div class="card-content black-text">
+                        <span class="card-title">
         <li>id:<%=review.id %></li>
     <br>
         <li>title of review: <%=review.title%></li>
@@ -36,7 +37,7 @@
         <li>would you recommend: <%=review.recommend%></li>
     <br>
           </span>
-          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -45,13 +46,17 @@
             <br>
             <%=link_to "leave review",   new_food_truck_review_path(@foodtruck)%>
         <% end %>
-    <%end%>
-            <%=link_to "leave review",   new_food_truck_review_path(@foodtruck)%>
-    </ul>
-    <br>
-            <%=link_to " go back to all food trucks", food_trucks_path %>
-</div>
+        <%end%>
+            <%=link_to "all reviews", reviews_path%>
             <br>
+            <%=link_to "all food trucks", food_trucks_path %>
+            <br>
+            <%=link_to "leave review",   new_food_truck_review_path(@foodtruck)%>
+            </ul>
+        <br>
+    </div>
+<br>
+</div>
 
 
 
