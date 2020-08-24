@@ -14,6 +14,5 @@ Rails.application.routes.draw do
   resources :food_trucks do
     resources :reviews
   end
-
   
 end

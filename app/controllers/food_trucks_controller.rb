@@ -1,12 +1,12 @@
 class FoodTrucksController < ApplicationController
     helper_method :has_permission
+    before_action :find_food_truck, only: [:show, :edit, :update, :destroy]
 
     def index
         @foodtruck = FoodTruck.all
     end
 
     def show
-        find_food_truck
     end
     
     def new
@@ -23,11 +23,9 @@ class FoodTrucksController < ApplicationController
     end
     
     def edit
-        find_food_truck
     end
     
     def update
-        find_food_truck
         if @foodtruck.update(food_truck_params)
         redirect_to food_truck_path(@foodtruck)
         else
@@ -36,7 +34,7 @@ class FoodTrucksController < ApplicationController
     end
     
     def destroy
-        if find_food_truck
+        if @foodtruck
         @foodtruck.destroy
         redirect_to food_trucks_path
         end

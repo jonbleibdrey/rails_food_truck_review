@@ -21,9 +21,21 @@
       </div>
       <div  class="left-align">
       <ul class="right hide-on-med-and-down">
-        <li><a href="reviews#index"><i class="material-icons">border_color</i>Review</a></li>
-        <li><a href="food_trucks#index"><i class="material-icons">directions_bus</i>Food</a></li>
-        <li><a href=""><i class="material-icons">eject</i>Logout</a></li>
+        <li>
+          <%= link_to reviews_path do %>
+            <i class="material-icons">border_color</i>Review
+          <% end %>
+        </li>
+        <li>
+          <%= link_to food_trucks_path do %>
+            <i class="material-icons">directions_bus</i>Food
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path,:method => :delete do %>
+            <i class="material-icons">eject</i>Logout
+          <% end %>
+        </li>
      </div>
      </div>
     <!---------nav bar------>

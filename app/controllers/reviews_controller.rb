@@ -1,11 +1,11 @@
 class ReviewsController < ApplicationController
+    before_action :find_review, only: [:show, :edit, :update, :destroy]
 
     def index
         @review = Review.all
     end
     
     def show
-        find_review
     end
     
     def new
@@ -23,11 +23,9 @@ class ReviewsController < ApplicationController
     end
     
     def edit
-        find_review
     end
     
     def update
-        find_review
         if @review.update(review_params) 
         redirect_to review_path(@review)
         else
@@ -36,7 +34,7 @@ class ReviewsController < ApplicationController
     end
     
     def destroy
-        if find_review
+        if @review
         @review.destroy
         redirect_to reviews_path
         end

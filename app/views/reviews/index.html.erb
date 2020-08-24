@@ -11,7 +11,7 @@
                 <div class="card-content black-text">
                 <span class="card-title">
     Food Truck: <%= link_to review.food_truck.name, food_truck_path(review.food_truck) %></span>
-    <p>Review: <%= link_to review.title, review_path(review) %></p>
+    <p>Review: <%= link_to review.title, food_truck_review_path(review.food_truck, review) %></p>
                 </ul>
     <%end%>
                 </div>

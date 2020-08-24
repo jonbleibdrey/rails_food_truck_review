@@ -5,6 +5,6 @@ class Review < ApplicationRecord
     validates :title, presence: true
     validates :detail, presence: true
     validates :rating, length: { in: 1..5 }
-    validates :recommend, inclusion: [ true, false ] 
+
   
 end
