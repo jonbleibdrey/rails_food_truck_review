@@ -4,9 +4,9 @@
     <h2><%= pluralize(@foodtruck.errors.count, "error") %> prohibited this TRUCKY™ from being saved:</h2>
  
     <ul>
-    <% @foodtruck.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
+      <% @foodtruck.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
     </ul>
   </div>
 <% end %>

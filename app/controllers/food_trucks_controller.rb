@@ -39,7 +39,8 @@ class FoodTrucksController < ApplicationController
         redirect_to food_trucks_path
         end
     end
-    
+
+
     def mexican
         @category = FoodTruck.mexican
         render :category

@@ -39,6 +39,12 @@ class ReviewsController < ApplicationController
         redirect_to reviews_path
         end
     end
+
+    def five_star_rating
+        @review = Review.five_star_rating
+        render :index
+    end
+
     
     private
     

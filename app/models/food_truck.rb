@@ -13,6 +13,8 @@ class FoodTruck < ApplicationRecord
     scope :italian, -> {self.where(category: "italian")}
     scope :american, -> {self.where(category: "american")}
 
+   
 
+   
 
 end

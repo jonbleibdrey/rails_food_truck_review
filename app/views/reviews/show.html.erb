@@ -14,10 +14,12 @@
         </div>
       </div>
     </div>
-    <%if current_user.id == @review.user_id%>
+    <%if user_signed_in? %>
+    <%if current_user.id == @review.user_id %>
     <%=link_to "edit review", edit_review_path(@review)%>
     <br>
     <%=link_to "delete review", review_path(@review), :method => "delete"%>
+    <%end %>
     <%end%>
     <br>
     <%=link_to "all reviews", reviews_path%>

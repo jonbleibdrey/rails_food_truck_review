@@ -1,6 +1,7 @@
 <div class="container">
 <div class="container">
 <h1>All Reviews</h1>
+
 </div>
 <div class="container">
     <% @review.each do |review| %>
@@ -10,14 +11,27 @@
               <div class="card  white">
                 <div class="card-content black-text">
                 <span class="card-title">
-    Food Truck: <%= link_to review.food_truck.name, food_truck_path(review.food_truck) %></span>
-    <p>Review: <%= link_to review.title, food_truck_review_path(review.food_truck, review) %></p>
+    Review: <%= link_to review.title, food_truck_review_path(review.food_truck, review) %>
+    <p>Food Truck: <%= link_to review.food_truck.name, food_truck_path(review.food_truck) %></p>
+    </span>
                 </ul>
     <%end%>
+    <%=link_to "five star", reviews_five_star_rating_path%>
+      
                 </div>
             <div class="container">
-    <%=link_to "all food trucks", food_trucks_path %>
             <div class="container">
+
+             <%if user_signed_in?%>
+        <%= link_to "create food truck", new_food_truck_path %>
+    <br>
+        <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+    <% else %>
+        <div class="container">
+        <%= link_to 'login', new_user_session_path %>
+        </div>
+    <%end%>
+        
   <h1>Top categories:</h1>
         </div>
         <div class="container">
@@ -43,5 +57,4 @@
 </div>
 </div>
 
-          
        
