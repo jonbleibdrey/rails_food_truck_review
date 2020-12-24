@@ -1,50 +1,49 @@
 <div class="container">
-<div class="container">
-<h1>All Reviews</h1>
-
+  <div class="container">
+    <h1>All Reviews</h1>
 </div>
-<div class="container">
-    <% @review.each do |review| %>
+    <div class="container">
+      <% @review.each do |review| %>
         <ul>
           <div class="row">
             <div class="col s12 m6">
               <div class="card  white">
                 <div class="card-content black-text">
-                <span class="card-title">
-    Review: <%= link_to review.title, food_truck_review_path(review.food_truck, review) %>
-    <p>Food Truck: <%= link_to review.food_truck.name, food_truck_path(review.food_truck) %></p>
-    </span>
-                </ul>
-    <%end%>
-    <%=link_to "five star", reviews_five_star_rating_path%>
-      
-                </div>
-            <div class="container">
-            <div class="container">
+                  <span class="card-title">
+                    Review: <%= link_to review.title, food_truck_review_path(review.food_truck, review) %>
+                      <p>Food Truck: <%= link_to review.food_truck.name, food_truck_path(review.food_truck) %></p>
+                  </span>
+        </ul>
+      <%end%>
+        <%=link_to "five star", reviews_five_star_rating_path%>
+    </div>
 
-             <%if user_signed_in?%>
+<div class="container">
+  <div class="container">
+      <%if user_signed_in?%>
         <%= link_to "create food truck", new_food_truck_path %>
     <br>
         <%= link_to 'logout', destroy_user_session_path, method: :delete %>
-    <% else %>
-        <div class="container">
+      <% else %>
+  <div class="container">
         <%= link_to 'login', new_user_session_path %>
-        </div>
-    <%end%>
+  </div>
+      <%end%>
         
   <h1>Top categories:</h1>
-        </div>
-        <div class="container">
-        <div class="container">
-    <li>
-        <%= link_to "mexican", foodtrucks_mexican_path %>
-    </li>
-    <li> 
-        <%= link_to "italian", foodtrucks_italian_path %>
-     </li>
-    <li>
-        <%= link_to "american", foodtrucks_american_path %>
-     </li>
+</div>
+
+<div class="container">
+<div class="container">
+  <li>
+    <%= link_to "mexican", foodtrucks_mexican_path %>
+  </li>
+  <li> 
+    <%= link_to "italian", foodtrucks_italian_path %>
+  </li>
+  <li>
+    <%= link_to "american", foodtrucks_american_path %>
+  </li>
                 </div>
               </div>
               <br>

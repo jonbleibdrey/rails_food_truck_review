@@ -6,22 +6,22 @@
         <div class="card white">
           <div class="card-content black-text">
             <span class="card-title"></span>
-    <li>title: <%= @review.title %></li>
-    <li>detail: <%= @review.detail%></li>
-    <li>rating: <%= @review.rating%></li>
-    <li>recommend: <%= @review.recommend%></li>
+            <li>title: <%= @review.title %></li>
+            <li>detail: <%= @review.detail%></li>
+            <li>rating: <%= @review.rating%></li>
+            <li>recommend: <%= @review.recommend%></li>
           </div>
         </div>
       </div>
     </div>
     <%if user_signed_in? %>
-    <%if current_user.id == @review.user_id %>
-    <%=link_to "edit review", edit_review_path(@review)%>
+      <%if current_user.id == @review.user_id %>
+      <%=link_to "edit review", edit_review_path(@review)%>
     <br>
-    <%=link_to "delete review", review_path(@review), :method => "delete"%>
-    <%end %>
+      <%=link_to "delete review", review_path(@review), :method => "delete"%>
+      <%end %>
     <%end%>
     <br>
     <%=link_to "all reviews", reviews_path%>
-</ul>
+    </ul>
 </div>

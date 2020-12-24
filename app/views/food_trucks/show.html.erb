@@ -1,58 +1,56 @@
 <div class="container">
-<div class="container">
-    <h1>Food Truck info:</h1>
+    <div class="container">
+        <h1>Food Truck info:</h1>
     <ul>
-        <li>name: <%= @foodtruck.name %></li>
-    <br>
-        <li>category of food: <%= @foodtruck.category%></li>
-    <br>
-        <li>phone number: <%= @foodtruck.phone%></li>
-    <br>
-        <li>current location: <%= @foodtruck.current_location%></li>
-    <br>
-    <%if has_permission %> 
-        <%=link_to "edit foodtruck", edit_food_truck_path(@foodtruck)%>
-    <br>
-        <%=link_to "delete foodtruck", food_truck_path(@foodtruck), :method => "delete"%>
-    <% end %>
-        </div>
-        <div class="container"> 
-    <h1>Reviews:</h1>
-
-    <%@foodtruck.reviews.each do |review|%>
-
-          <div class="row">
-            <div class="col s12 m10">
-                <div class="card  white">
-                    <div class="card-content black-text">
-                        <span class="card-title">
-        <li>id:<%=review.id %></li>
-    <br>
-        <li>title of review: <%=review.title%></li>
-    <br>
-        <li>detail's: <%=review.detail%></li>
-    <br>
-        <li>rating: <%=review.rating%></li>
-    <br>
-        <li>would you recommend: <%=review.recommend%></li>
-    <br>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
+            <li>name: <%= @foodtruck.name %></li>
+        <br>
+            <li>category of food: <%= @foodtruck.category%></li>
+        <br>
+            <li>phone number: <%= @foodtruck.phone%></li>
+        <br>
+            <li>current location: <%= @foodtruck.current_location%></li>
+        <br>
         <%if has_permission %> 
-            <%=link_to "edit review",   edit_review_path(review)%>
-            <br>
-            <%=link_to "leave review",   new_food_truck_review_path(@foodtruck)%>
+            <%=link_to "edit foodtruck", edit_food_truck_path(@foodtruck)%>
+        <br>
+            <%=link_to "delete foodtruck", food_truck_path(@foodtruck), :method => "delete"%>
         <% end %>
-        <%end%>
-        <br>
-        <br>
-            </ul>
-        <br>
     </div>
-<br>
+        <div class="container"> 
+            <h1>Reviews:</h1>
+                <%@foodtruck.reviews.each do |review|%>
+            <div class="row">
+                <div class="col s12 m10">
+                    <div class="card  white">
+                        <div class="card-content black-text">
+                            <span class="card-title">
+                                <li>id:<%=review.id %></li>
+                            <br>
+                                <li>title of review: <%=review.title%></li>
+                            <br>
+                                <li>detail's: <%=review.detail%></li>
+                            <br>
+                                <li>rating: <%=review.rating%></li>
+                            <br>
+                                <li>would you recommend: <%=review.recommend%></li>
+                            <br>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <%if has_permission %> 
+                    <%=link_to "edit review",   edit_review_path(review)%>
+                        <br>
+                    <%=link_to "leave review",   new_food_truck_review_path(@foodtruck)%>
+                <% end %>
+            <%end%>
+        <br>
+        <br>
+    </ul>
+        <br>
+            </div>
+        <br>
 </div>
 
 

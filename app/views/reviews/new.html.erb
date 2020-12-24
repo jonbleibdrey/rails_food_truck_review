@@ -1,25 +1,25 @@
 <div class="container">
-<%= render partial: "reviews/error", object: @review %>
+    <%= render partial: "reviews/error", object: @review %>
 
-<%= form_for @review do |f| %>
-<%= f.hidden_field :food_truck_id, value: @foodtruck.id%>
-<br>
-<%= f.label :title %>
-<%= f.text_field :title %>
-<br>
-<%= f.label :detail %>
-<%= f.text_field :detail %>
-<br>
-<%= f.label :rating %>
-<%= f.text_field :rating %>
-<br>
-<%= f.label :recommend %>
-<%= f.text_field :recommend %>
-<br>
-<%= f.submit %>
-<% end %>
-<%= link_to 'back to all reviews', reviews_path %>
+        <%= form_for @review do |f| %>
+        <%= f.hidden_field :food_truck_id, value: @foodtruck.id%>
+    <br>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    <br>
+        <%= f.label :detail %>
+        <%= f.text_field :detail %>
+    <br>
+        <%= f.label :rating %>
+        <%= f.text_field :rating %>
+    <br>
+        <%= f.label :recommend %>
+        <%= f.text_field :recommend %>
+    <br>
+        <%= f.submit %>
+        <% end %>
+    <%= link_to 'back to all reviews', reviews_path %>
 </div>
 
-<br>
+
 
